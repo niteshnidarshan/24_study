@@ -1,4 +1,5 @@
 <p>react: study and practice</P>
 <p>spring boot in details</p> 
-java concurrency [thread + executor]
-spring batch
+<p>java concurrency [thread + executor]</p>
+<p>spring batch</p>
+<p>Generative AI</p>

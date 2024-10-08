@@ -1,4 +1,4 @@
-react: study and practice /n
-spring boot in details /n
-java concurrency [thread + executor] /n
-spring batch /n
+<p>react: study and practice</P>
+<p>spring boot in details</p> 
+java concurrency [thread + executor]
+spring batch

@@ -1,0 +1,1115 @@
+Jai Ram G ki
+============
+React
+-----
+
++ Javascript library to build dynamic and interactive user interfaces.
+
++ Developed at Facebook in 2011.
+
++ Currently most widely used JS library for front-end development
+
++ Used to create single page applications.
+
+DOM [Document Object Model]
+============================
++ Browser takes HTML and create DOM.
+
++ JS help us modify DOM based on user actions or events.
+
++ In big applications, working with DOM becomes complecated.
+
+Problems with Javascript
+-------------------------
++ React has a simpler mental model
+
++ JS is cumbersome
+
++ JS is Error-prone
+
++ JS is hard to maintain
+
+Working with React
+-------------------
++ No need to worry about querying and updating DOM
+
++ React creates a web page with small and reusable components
+
++ React will take care of creating and updating DOM elements
+
++ It saves a lot of time
+
+ 
+ 
+ 
+ + Js is imperative: you define steps to reach your desired state.
+ + React is declarative: you define the target UI state and then react figures out how to reach the state.
+ 
+ + Components help us write reusable, modular and better 
+ 
+ Components
+ ==========
+ + React application is a tree of components with 'App' component as the root binding everything together.
+ 
+ Installations
+ -------------
+ 1) NodeJs - help as a server for react
+ 2) Vs Code
+ 
+ Create a React app
+ ------------------
+ 1) Official tool is CRA(Create React App)
+ 2) Vite is a modern tool to create React Project
+ 3) Vite produces quick and small bundle size.
+ 4) With Vite, to launch dev server, use: npm run dev
+ 5) With CRA, to launch dev server, use: npm start
+ 
+ npm = node package manager
+ 
+ Create a new app with Vite
+ --------------------------
+ in terminal, 
+ > npm create vite@latest
+ 
+ after creating app,
+ > cd app
+ 
+ + open app in vs code and open its terminal
+ 
+ > npm install
+ 
+ > npm run dev
+ 
+ Project structure
+ -----------------
+ 1) node_modules/ : It has all the installed node package.
+ 2) public/ directory : Contains static files that don't change.
+ 3) src/ directory : Main directory for react code
+ 	3.1) components/ : Reusable parts of the UI, like buttons or headers.
+	3.2) assets/ : Images, fonts and other static files.
+	3.3) styles/ : css
+ 4) package.json : manfiest or metadata file. contains information about this project like name, version, dependencies on other react packages.
+ 
+ 5) package-lock.json : contains current configuration of project 
+ 
+ 6) vite.config.js contains vite config.	
+ 
+ 7) .eslintrc.cjs : default configuration
+ 
+File Extensions
+---------------
+.js
+	 + contains regular js code
+
+.jsx
+	+ stands for Javascript XML
+	+ Combines Javascript with HTML like tags
+	+ Makes it easier to design UI components
+	
+App.jsx
+-------
+function App() {
+	return 	<h1>
+				Jai Ram G Ki
+				
+				Hello World
+			<h1> 
+}	
+export default App;
+ 
+Class components and Function components
+------------------------------------------
+Class components
+	 + stateful: Can manage state
+	 + Lifecycle: Access to lifecycle methods
+	 + Verbose: More boilerplate code
+	 + Not prefered
+	 
+Functional components
+	+ Initially stateless
+	+ Can use Hooks for state and effects
+	+ Simpler and more concise
+	+ More popular
+	
+JSX
+======
+	+ JSX determines how the UI will look wherever the component is used.
+	+ Not HTML: Though it resembles HTML, you are actually writing JSX, which stands for Javascript XML.
+	+ Conversion: JSX gets converted to regular Javascript.
+	+ Babeljs.io/ repl is a tool that allow you to see how JSX is transformed into Javascript.
+	
+Exporting components
+--------------------
+	+ Enables the use of a component in other parts.
+	+ Default Export: Allows exporting a single component as the default from a module.
+	+ Named export: Allows exporting multiple items from a module.
+	+ Importing: To use an exported component, you need to import in the destination file using import syntax.
+	
+	example:
+	Component.js [having one default export]
+	-------------
+	
+	export default function Button() {
+		...
+	}
+	
+	
+	Components.js [having multiple mixed exports]
+	-------------
+	
+	export function Slider() {
+		...
+	}
+	
+	export function Checkbox() {
+		...
+	}
+	
+	MixedComponents.js [named export(s) and one default export]
+	------------------
+	
+	export function Avatar() {...}
+	
+	export default function FriendList() {...}
+	
+	
+Creating custom tag
+-------------------
+	+ Create a file 'MyButton.jsx'	 
+	
+	function MyButton() {
+		return <button> Click </button>
+	}
+ 	export default MyButton
+	
+	In App.jsx
+	----------
+	import MyButton from "./MyButton";
+	function App() {
+		return <div> 
+			<h1>Hello World<h1>
+			<MyButton></MyButton>
+		</div>
+	}
+ 
+ Some important points
+ ---------------------
+ + Naming: Must be capitalized. lowercase for default HTML.
+ 
+ + HTML: Unlike vanilla js where you can not directly write HTML, in React, you can embed HTML like syntax using JSX.
+ 
+ + CSS: In React, CSS can be directly imported into component files, allowing for modular and component-specific styling.
+ 
+ Dynamic Components
+ ===================
+ + Dynamic content: JSX allows the creation of dynamic and inteactive UI components.
+ + Javascript expression: Using {}, we can embed any Javascript expression directly with JSX. This includes variables, function calls, and more.
+ 
+ Hello.jsx
+ ----------
+ function Hello() {
+ 	let name = "Nitesh";
+	let fullName = () => {
+		return ''Nitesh Kumar;
+	}
+ 	return <p>
+		Jai Ram G Ki
+		Name: {name}
+		Full Name: {fullName()}
+		</p>
+ } 
+ 
+	export default Hello;	
+ 
+ Reusable Components
+ ---------------------
+ + Modularity: Components are modular, allowing for easy reuse accross different parts of an application.
+ 
+ + Consistency: Reusing components ensures UI consistency and reduces the chance of discrepancies.
+ 
+ + Efficiency: Reduces development time and effort by avoiding duplication of code.
+ 
+ + Maintainability: Changes made to a reused component reflects everywhere it's used, simplifying updates and bug fixies.
+ 
+ 
+Random.jsx
+----------
+function Random() {
+	let number = Math.random() * 100;
+	return <h1 style={{'background-color': orange; 'color': white}}>Random Number is: {Math.round(number)}</h1>
+}
+export default Random; 
+
+
+
+Including Bootstrap
+-------------------
+1) Responsive: Mobile-first design for all device sizes.
+2) Components: Pre-styled elements like buttons and navbars.
+3) Customizable: Modify default styles as needed.
+4) Cross-Bowser: Consistent look across browsers.
+5) Open-source: Free with community support.
+
++ install:
+	> npm i bootstrap@5.3.2
+
++ import:
+	import "bootstrap/dist/css/bootstrap.min.css";
+	
+
+Create a new project - TODO app
+-------------------------------
+> npm create vite@latest
+
+to run: 
+> npm run dev
+
+install bootstrap:
+>npm i bootstrap@5.3.2
+
++ Can be checked bootstrap dependency in package.json
+
++ import bootstrap in Main.jsx
+
+  import "bootstrap/dist/css/bootstrap.min.css"
+  
++ Which css added later will be prioritise.
+
+
+Main.jsx
+--------
+import "bootstrap/dist/css/bootstrap.min.css"
+    	
+App.jsx
+-------
+import './App.css'
+
+function App() {
+	
+	return <div>
+	
+	</div>
+}
+
+Create a to-do app
+==================
+Main.jsx
+--------
+	//import bootstrap
+	import "bootstrap/dist/css/bootstrap.min.css"
+	
+App.jsx
+-------
+function App() {
+	return <center class='todo-container'>
+		<h1>TODO App</h1>
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-6">
+					<input type="text" placeholder="Enter Todo here"/>
+				</div>
+				<div class="col-4">
+					<input type="date"/>
+				</div>
+				<div class="col-2">
+					<button type="button" class="btn btn-success">Add</button>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					Buy Milk
+				</div>
+				<div class="col-4">
+					28/09/2024
+				</div>
+				<div class="col-2">
+					<button type="button" class="btn btn-danger">Delete</button>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					Go to college
+				</div>
+				<div class="col-4">
+					28/09/2024
+				</div>
+				<div class="col-2">
+					<button type="button" class="btn btn-danger">Delete</button>
+				</div>
+			</div>
+		</div>
+	</center>
+}	
+export default App
+
+Now, we have to separate components
+
+src/components/AppName.jsx
+--------------------------
+function AppName() {
+	return <h1>TODO App</h1>
+}
+export default AppName;
+
+
+src/components/AddTodo.jsx
+--------------------------
+function AddTodo() {
+	return(
+		<div class="container">
+			<div class="row my-row">
+				<div class="col-6">
+					<input type="text" placeholder="Enter Todo here"/>
+				</div>
+				<div class="col-4">
+					<input type="date"/>
+				</div>
+				<div class="col-2">
+					<button type="button" class="btn btn-success my-button">Add</button>
+				</div>
+			</div>
+		</div>	
+	);
+}
+export default AddTodo;
+
+
+src/components/TodoItem.jsx
+---------------------------
+function TodoItem() {
+	
+	let todoName = "Buy Milk";
+	let todoDate = "28/09/2024";
+	return(
+		<div class="container">
+			<div class="row my-row">
+				<div class="col-6">
+					{todoName}
+				</div>
+				<div class="col-4">
+					{todoDate}
+				</div>
+				<div class="col-2">
+					<button type="button" class="btn btn-danger my-button">Delete</button>
+				</div>
+			</div>
+		</div>
+	);
+}
+export default TodoItem;
+
+
+
+Now add all components to App.jsx
+---------------------------------
+App.jsx
+-------
+import AppName from ".components/AppName";
+import AddTodo from ".components/AddTodo";
+import TodoItem from ".components/TodoItem";
+import "./App.css";
+
+function App() {
+	return <center className='todo-container'>
+		<AppName/>
+		<AddTodo/>
+		<div className='items-container'>
+			<TodoItem/>
+		</div>	
+	</center>
+}	
+export default App
+
+App.css
+-------
+h1 {
+	font-weight: 700;
+	font-size: 45px;
+	margin: 10px;
+	margin-bottom: 20px;
+}
+input {
+	width: 100%;
+}
+.items-container {
+	text-align: left
+}
+
+.my-row {
+	margin: 10px 5px;
+}
+
+.my-button {
+	min-width: 80px;
+}
+
+
+app- Bharat Clock
+=================
+> npm create vite@latest
+
+> cd bharatClock
+
+> npm install
+
+> npm i bootstrap@5.3.2
+
+src/components/ClockHeading.jsx
+-------------------------------
+let ClockHeading = () => {
+	return <h1>Bharat Clock</h1>;
+};
+export default ClockHeading;
+
+src/components/ClockSlogan.jsx
+------------------------------
+let ClockSlogan = () => {
+	return <p className="lead">Jai Ram G ki</p>;
+};
+export default ClockSlogan;
+
+
+src/components/CurrentTime.jsx
+------------------------------
+let CurrentTime = () => {
+	let time = new Date();
+	return <h1>Current time is : {time.toLocaleDateString()} - {time.toLocalTimeString()}</h1>;
+};
+export default CurrentTime;
+
+
+App.jsx
+-------
+import ClockHeading from "./components/ClockHeading";
+import ClockSlogan from "./components/ClockSlogan";
+import CurrentTime from "./components/CurrentTime";
+import "./App.css";
+
+function App() {
+	return(
+		<center>
+			<ClockHeading/>
+			<ClockSlogan/>
+			<CurrentTime/>
+			
+		</center>
+	);
+}
+export default App;
+
+3:03:00
+
+Fragments
+=========
++ Allows grouping of multiple elements without extra DOM nodes.
++ Return multiple elements without a wrapping parent like <div> or other elements.
++ It provides cleaner DOM and consisting styling
++ Two syntaxes for Fragments:
+	1) <React.Fragment>...</React.Fragment>
+	2) <>...</> Not required to import React
+
+
+Create a project
+
+> npm create vite@latest
+> npm i bootstrap@5.3.2
+
+> npm run dev
+
+Adding list group/ list item to the page
+
+App.jsx
+-------
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+function App() {
+	return (
+		<React.Fragment> //Wraped in a single HTML element as 'fragment' works with a single element of HTML. jsx must return a single HTML element and React.Fragment fulfils it.
+			<h1>Healthy Food</h1>
+			<ul class="list-group">
+				<li class="list-group-item">An item</li>
+				<li class="list-group-item">A second item</li>
+				<li class="list-group-item">A third item</li>
+				<li class="list-group-item">A fourth item</li>
+				<li class="list-group-item">A fifth item</li>
+			</ul>
+		</React.Fragment>
+	);
+}
+export default App;
+
+
+
+Map
+-----
+1) Purpose: Render lists from array data.
+2) JSX Elements: Transform array items into JSX.
+3) Inline Rendering: Directly inside JSX
+	{items.map(item=> <li key = {item.id}> {item.name}</li>)}
+
+4) Key Prop or id: Assign unique key for optimized re-renders.
+	<div key={item.id}> {item.name} </div>
+		
+
+
+App.jsx
+-------
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+function App() {
+	let foodItems = {"Roti", "Vagetable", "Dal", "Salad", "Milk"};
+	return (
+		<> //Fragment
+			<h1>Healthy Food</h1>
+			<ul className="list-group">
+				{foodItems.map( item => <li key={item} className="list-group-item">{item}</li>)}
+			</ul>
+		</> //Fragment closed
+	);
+}
+export default App;
+
+Conditional Rendering
+=====================
++ Displaying content based on certain conditions.
++ Allows for dynamic user interface.
+
+Methods:
+	+ If-else statements: choose between two blocks
+	+ Ternary operators: Quick way to choose between two options.
+	+ Logical operators: Useful for rendering content when a condition is true.
+Benifits:
+	+ Enhances user experience.
+	+ Reduces unnecessary rendering.
+	+ Make apps more interactive and responsive.
+	
+App.jsx [If-else example]
+--------------------------
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+function App() {
+	let foodItems = [];
+	
+	if(foodItems.length === 0) {
+		return <h3> I am still hungry!</h3>
+	}
+	
+	return (
+		<> //Fragment
+			<h1>Healthy Food</h1>
+			<ul className="list-group">
+				{foodItems.map( item => <li key={item} className="list-group-item">{item}</li>)}
+			</ul>
+		</> //Fragment closed
+	);
+}
+export default App;	
+
+App.jsx [ternary example]
+--------------------------
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+function App() {
+	let foodItems = [];
+	
+	return (
+		<> //Fragment
+			<h1>Healthy Food</h1>
+			{foodItems.length === 0 ? <h3>I am still hungry!</h3> : null}
+			<ul className="list-group">
+				{foodItems.map( item => <li key={item} className="list-group-item">{item}</li>)}
+			</ul>
+		</> //Fragment closed
+	);
+}
+export default App;	
+
+or 
+
+App.jsx [ternary example]
+--------------------------
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+function App() {
+	let foodItems = [];
+	le emptyMessage = foodItems.length === 0 ? <h3>I am still hungry!</h3> : null;
+	return (
+		<> //Fragment
+			<h1>Healthy Food</h1>
+			{emptyMessage}
+			<ul className="list-group">
+				{foodItems.map( item => <li key={item} className="list-group-item">{item}</li>)}
+			</ul>
+		</> //Fragment closed
+	);
+}
+export default App;	
+
+App.jsx [logical example]
+--------------------------
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+function App() {
+	let foodItems = [];
+	
+	return (
+		<> //Fragment
+			<h1>Healthy Food</h1>
+			{foodItems.length === 0 && <h3>I am still hungry!</h3>}
+			<ul className="list-group">
+				{foodItems.map( item => <li key={item} className="list-group-item">{item}</li>)}
+			</ul>
+		</> //Fragment closed
+	);
+}
+export default App;	
+
+
+Passing Data via Props
+======================
+Props in React:
+	+ Short for properties
+	+ Mechanism for passing data
+	+ Read-only by default
+Usage:
+	+ Pass data from parent to child component.
+	+ Makes components reusable
+	+ Defined as attributes in JSX.
+Key Points:
+	parent -> child -> grand child
+	+ Data flows one-way (downwards)
+	+ Props are immutable(not change).
+	+ Used for communication between components.
+	for e.g:
+		<Header title = "My App"/>
+		
+Item.jsx
+--------
+const Item = (props) => {
+	return (
+		//let {foodItem} = props;
+		<li className="list-group-item">{props.foodItem}</li>
+	);
+}
+export default Item;		
+
+FoodItems.jsx
+-------------
+import Item from "./Item";
+const FoodItems = ({items}) => {
+	return (
+		<ul className="list-group">
+			{items.map( item => (
+				<Item key={item} foodItem = {item}></Item> //passing item to Item
+			))}
+		</ul>
+	);
+};
+export default FoodItems;
+
+ErrorMessage.jsx
+----------------
+const ErrorMessage = ({items}) => {
+	return (<>
+		{items.length === 0 && <h3>I am still hungry!</h3>}
+	</>);
+};
+export default ErrorMessage;
+
+
+App.jsx 
+--------------------------
+import FoodItems from "./components/FoodItems";
+import ErrorMessage from "./components/ErrorMessage";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+function App() {
+	let foodItems = ["Roti", "Vagetable", "Dal", "Salad", "Milk"];
+	return (
+		<> //Fragment
+			<h1>Healthy Food</h1>
+			<ErrorMessage items={fooddItems}></ErrorMessage>
+			<FoodItems item={foodItems}></FoodItems>
+		</> //Fragment closed
+	);
+}
+export default App;	
+
+CSS Module
+==========
++ Localized class names to avoid global conflict
++ Styles are scoped to individual components
++ Helps in creating component-specific styles.
++ Automatically generates unique class names.
++ Promotes modular and maintainable CSS.
++ Can use alongside global CSS when needed.
+
+Item.jsx [adding a css class 'my-item' and 'my-span' to element li]
+--------
+import styles from "./Item.module.css";
+
+const Item = ({foodItem}) => {
+	return <li className={`${styles['my-item']}`}"><span className={styles['my-span']}>{foodItem}</span></li>;
+};
+export default Item;
+
+Item.module.css [must follow name rule#]
+----------------
+.my-item {
+	background-color: khaki;
+}
+.my-span {
+	color: red;
+}
+
+#css file name rule: css file name start with the same name as component then .module.css | finally all css class or selector will be provided a unique name by appending id during compile so that no name clash would be there if someone also used same class or selector name.
+
+
+Create to-do app dynamically
+============================
+Main.jsx
+--------
+	//import bootstrap
+	import "bootstrap/dist/css/bootstrap.min.css"
+	
+
+src/components/AppName.jsx
+--------------------------
+function AppName() {
+	return <h1>TODO App</h1>
+}
+export default AppName;
+
+
+src/components/AddTodo.jsx
+--------------------------
+function AddTodo() {
+	return(
+		<div className="container">
+			<div className="row my-row">
+				<div className="col-6">
+					<input type="text" placeholder="Enter Todo here"/>
+				</div>
+				<div className="col-4">
+					<input type="date"/>
+				</div>
+				<div className="col-2">
+					<button type="button" className="btn btn-success my-button">Add</button>
+				</div>
+			</div>
+		</div>	
+	);
+}
+export default AddTodo;
+
+
+src/components/TodoItem.jsx
+---------------------------
+function TodoItem({todoName, todoDate}) {
+	
+	return(
+		<div className="container">
+			<div className="row my-row">
+				<div className="col-6">
+					{todoName}
+				</div>
+				<div className="col-4">
+					{todoDate}
+				</div>
+				<div className="col-2">
+					<button type="button" className="btn btn-danger my-button">Delete</button>
+				</div>
+			</div>
+		</div>
+	);
+}
+export default TodoItem;
+
+TodoItems.jsx
+-------------
+import TodoItem from ".components/TodoItem";
+
+const TodoItems = ({todoItems}) => {
+	return (
+		<div className='items-container'>
+			{todoItems.map(item => <TodoItem todoDate={item.dueDate} todoName={item.name}></TodoItem>)}		
+		</div>
+	);
+}
+export default TodoItems;
+
+App.jsx
+-------
+import AppName from ".components/AppName";
+import AddTodo from ".components/AddTodo";
+import TodoItems from ".components/TodoItems";
+import "./App.css";
+
+function App() {
+	const todoItems = [{
+			name: "Buy Milk",
+			dueDate: "04/10/2024"
+		},
+		{
+			name: "Go to college",
+			dueDate: "04/10/2024"
+		}
+	
+	];
+	return <center className='todo-container'>
+		<AppName/>
+		<AddTodo/>
+		<TodoItems todoItems = {todoItems}></TodoItems>	
+	</center>
+}	
+export default App
+
+App.css
+-------
+h1 {
+	font-weight: 700;
+	font-size: 45px;
+	margin: 10px;
+	margin-bottom: 20px;
+}
+input {
+	width: 100%;
+}
+.items-container {
+	text-align: left
+}
+
+.my-row {
+	margin: 10px 5px;
+}
+
+.my-button {
+	min-width: 80px;
+}
+
+Calculator version1
+===================
+npm create vite@latest
+npm i bootstrap@5.3.2
+
+App.jsx
+-------
+import styles from "./App.module.css";
+
+function App() {
+	return (
+		<div className={styles.calculator}>
+			<Display></Display>
+			<ButtonsContainer></ButtonsContainer>
+		</div>
+	);
+}
+export default App;
+
+Display.jsx
+-----------
+import styles from "./Display.module.css";
+
+const Display = () => {
+	<input className={styles.display} type="text"/>
+}
+export default Display;
+
+
+ButtonsContainer.jsx
+--------------------
+import styles from "ButtonsContainer.module.css"
+
+const ButtonsContainer = () => {
+	
+	const buttonNames = ['C', '1','2','+','3','4','-','5','6','*','7','8','/','=','9','0','.'];
+
+	<div className={styles.buttonContainer}>
+		{buttonNames.map((buttonName) => (
+			<button className={styles.button}>{buttonName}</button>
+		))}
+	</div>
+}
+export default ButtonsContainer;
+
+
+ButtonsContainer.module.css
+---------------------------
+.buttonsContainer {
+	display: flex;
+	justify-containt: center;
+	flex-wrap: wrap;
+}
+.button {
+	width: 45px;
+	height: 45px;
+	margin: 3px;
+}
+
+Display.module.css
+------------------
+.display {
+	margin: 10px;
+	width: 175px;
+	font-size: 25px;
+}
+
+App.module.css
+--------------
+.calculator {
+	border: 1px solid gray;
+	width: 200px;
+	border-radius: 5px;
+}
+
+Passing Children
+================
+1) children is a special prop for passing elements into components.
+2) Used for flexible and reusable component designs.
+3) Common in layout or container components.
+4) Accessed with props.children.
+5) Can be any content: string, numbers, jsx or components.
+6) Enhances component composability and reusability.
+
+function Container(props) {
+	return(
+		<div className="container-style">
+			{props.children}
+		</div>
+	);
+}
+
+<Container>
+	<h1>Welcome</h1>
+	<p>This content is passed as children to the Container component.</p>	
+<Container>
+
+For e.g, FoodItem app can be modified with children container
+Container.jsx
+-------------
+import styles from "./Container.module.css";
+
+const Container = (props) => {
+	return <div className={styles.container}>{props.children}</div>;
+};
+export default Container;
+
+
+Container.module.css
+--------------------
+.container {
+	border: 1px solid black;
+	margin: 15px;
+	width: 50%;
+	border-radius: 5px;
+	min-width: 300px;
+	padding 15px;
+}
+
+App.jsx 
+--------------------------
+import FoodItems from "./components/FoodItems";
+import ErrorMessage from "./components/ErrorMessage";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import Container from "./components/Container";
+
+function App() {
+	let foodItems = ["Roti", "Vagetable", "Dal", "Salad", "Milk"];
+	return (
+		<>
+		<Container> 
+			<h1>Healthy Food</h1>
+			<ErrorMessage items={fooddItems}></ErrorMessage>
+			<FoodItems item={foodItems}></FoodItems>
+		</Container> 
+		<Container>
+			<p>This is also a container with same design but different content</p>
+		</Container>
+		</>
+	);
+}
+export default App;
+
+App.css
+-------
+.food-heading {
+	color: red;
+	text-align: center;
+}
+
+Handling Events
+===============
+
+5:05
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+Jai Ram G Ki
+
+git --version
+
++ To know git user name
+	git config user.name
+	
++ To know git email
+	git config user.email
+	
++ To set git user name
+	git config --global user.name "Ram G"
+
++ To set git email
+	git config --global user.email "niteshfromkatihar@gmail.com"
+	
+	Git uses email address to associate commits with user accounts on hosting plateforms like GitHub, GitLab, & Bitbucket. This association enables communication tools, such as commets and notifications, to link back to the appropriate user.
+	
++ git status
+	frequently used command.
+	uses to know all current info about the repo in which this command executed.
+	
++ git log
+	return all activity history about the repo
+	
++ git init
+	1) Create a directory an go inside it
+	2) git init
+		$ It will create a .git directory. 
+		$ .git directory contains/ maintains all about the git info.
+		$ If .git directory dileted - the directory will be unlinked from git repo and no git 			command/ operation will work on it.
+		
+		
++ git add file_1 file_n
+	$ Once you create a new file inside repo, the file status would be untracked.
+	$ Once you run 'git add' command, all new files are the part of stage
+	$ Once you run commit command, all files will be commited to the repo and
+	$ Once files/ changes committed, then push command will update the remote or actual repo with 	changes. 
+	
+	untracked -> stage -> commit -> push
+		
++ git add .
+	$ This command will add all the untracked files/ changes to repo.
+	 
++ git commit -m "commit message"
+	$ This command will commit the added files/ changes to repo.
+	
++ git commit -am "commit message"
+	$ This command will add the untracked files/ changes as well as commits to repo.
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
